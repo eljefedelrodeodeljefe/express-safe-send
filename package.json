@@ -1,6 +1,6 @@
 {
 	"name": "express-safe-send",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Do not send on already sent Express headers.",
 	"license": "MIT",
 	"repository": "eljefedelrodeodeljefe/express-safe-send",
@@ -13,20 +13,24 @@
 		"node": ">=6"
 	},
 	"scripts": {
-    "test": "node -v && npm run lint && npm run test:unit",
-    "test:unit": "NODE_ENV=test nyc tape 'test/**/*.spec.js' | tap-spec",
-    "lint": "eslint -c .eslintrc .",
-    "coverage": "nyc check-coverage && nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "tdd": "nodemon --exec npm run test:unit",
-    "preversion": "npm run clean && npm test",
-    "postversion": "TAG=$(echo $(git describe --tags $(git rev-list --tags --max-count=1))) && git tag -a $TAG $TAG -f -m \"$(git log `git describe --tags --abbrev=0 HEAD^`..HEAD --oneline)\" && git push && git push --tags && npm run clean",
-    "clean": "rm -rf coverage coverage.lcov .nyc_output"
+		"test": "node -v && npm run lint && npm run test:unit",
+		"test:unit": "NODE_ENV=test nyc tape 'test/**/*.spec.js' | tap-spec",
+		"lint": "eslint -c .eslintrc .",
+		"coverage": "nyc check-coverage && nyc report --reporter=text-lcov > coverage.lcov && codecov",
+		"tdd": "nodemon --exec npm run test:unit",
+		"preversion": "npm run clean && npm test",
+		"postversion": "TAG=$(echo $(git describe --tags $(git rev-list --tags --max-count=1))) && git tag -a $TAG $TAG -f -m \"$(git log `git describe --tags --abbrev=0 HEAD^`..HEAD --oneline)\" && git push && git push --tags && npm run clean",
+		"clean": "rm -rf coverage coverage.lcov .nyc_output"
 	},
 	"files": [
 		"index.js"
 	],
 	"keywords": [
-		"timeout", "safe", "send", "headers", "sent"
+		"timeout",
+		"safe",
+		"send",
+		"headers",
+		"sent"
 	],
 	"dependencies": {},
 	"devDependencies": {
@@ -46,26 +50,26 @@
 		"tap-spec": "^5.0.0",
 		"tape": "^4.9.1"
 	},
-  "nyc": {
-    "check-coverage": true,
-    "per-file": false,
-    "lines": 100,
-    "statements": 100,
-    "functions": 100,
-    "branches": 100,
-    "include": [
-      "index.js"
-    ],
-    "exclude": [],
-    "reporter": [
-      "lcov",
-      "text-summary",
-      "json"
-    ],
-    "require": [],
-    "extension": [],
-    "cache": true,
-    "all": true,
-    "report-dir": "./coverage"
-  }
+	"nyc": {
+		"check-coverage": true,
+		"per-file": false,
+		"lines": 100,
+		"statements": 100,
+		"functions": 100,
+		"branches": 100,
+		"include": [
+			"index.js"
+		],
+		"exclude": [],
+		"reporter": [
+			"lcov",
+			"text-summary",
+			"json"
+		],
+		"require": [],
+		"extension": [],
+		"cache": true,
+		"all": true,
+		"report-dir": "./coverage"
+	}
 }
