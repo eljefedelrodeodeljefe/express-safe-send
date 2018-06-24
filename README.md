@@ -1,6 +1,9 @@
-# express-safe-send [![Build Status](https://travis-ci.org/eljefedelrodeodeljefe/express-safe-send.svg?branch=master)](https://travis-ci.org/eljefedelrodeodeljefe/express-safe-send) [![codecov](https://codecov.io/gh/eljefedelrodeodeljefe/express-safe-send/badge.svg?branch=master)](https://codecov.io/gh/eljefedelrodeodeljefe/express-safe-send?branch=master)
+# express-safe-send [![Build Status](https://travis-ci.org/eljefedelrodeodeljefe/express-safe-send.svg?branch=master)](https://travis-ci.org/eljefedelrodeodeljefe/express-safe-send) [![codecov](https://codecov.io/gh/eljefedelrodeodeljefe/express-safe-send/badge.svg?branch=master)](https://codecov.io/gh/eljefedelrodeodeljefe/express-safe-send?branch=master) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 > Do not send on already sent Express headers.
+
+[![NPM](https://nodei.co/npm/express-safe-send.png)](https://nodei.co/npm/express-safe-send/)
+
 
 ## Install
 
