@@ -3,7 +3,7 @@
   "version": "0.0.0-development",
   "description": "Do not send on already sent Express headers.",
   "license": "MIT",
-  "repository": "git@github.com:eljefedelrodeodeljefe/express-safe-send.git",
+  "repository": "https://github.com/eljefedelrodeodeljefe/express-safe-send.git",
   "author": {
     "name": "Robert Jefe Lindstaedt",
     "email": "robert.lindstaedt@gmail.com",
