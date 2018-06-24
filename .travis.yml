@@ -3,6 +3,11 @@ node_js:
   - '10'
   - '8'
   - '6'
+
+install:
+  - npm i -g npm@latest
+  - npm install
+
 after_script:
   - './node_modules/.bin/nyc report --reporter=text-lcov > coverage.lcov && ./node_modules/.bin/codecov'
 
@@ -10,4 +15,4 @@ deploy:
   provider: script
   skip_cleanup: true
   script:
-    - npm i -g npm@latest && npx travis-deploy-once "npx semantic-release"
+    - npx travis-deploy-once "npx semantic-release"
