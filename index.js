@@ -1,5 +1,9 @@
 
 module.exports = (options = {}) => {
+  options = Object.assign(options, {
+    proxyMode: false
+  })
+
   return function safeSendMiddleware (req, res, next) {
     res.safeSend = function safeSend (body) {
       if (res.headersSent) return
