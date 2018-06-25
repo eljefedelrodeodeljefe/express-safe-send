@@ -5,15 +5,22 @@ module.exports = (options = {}) => {
   })
 
   return function safeSendMiddleware (req, res, next) {
-    res.safeSend = function safeSend (body) {
+    res.safeSend = function safeSend (body, cb) {
+      if (res.headersSent && typeof cb === 'function') return cb(new Error('express-safe-send: headers were already are sent'))
       if (res.headersSent) return
-      return res.send(body)
+
+      res.send(body)
+
+      if (typeof cb === 'function') return cb()
     }
 
-    res.safeJsonSend = function safeSend (body) {
+    res.safeJsonSend = function safeSend (body, cb) {
+      if (res.headersSent && typeof cb === 'function') return cb(new Error('express-safe-send: headers were already are sent'))
       if (res.headersSent) return
 
-      return res.json(body)
+      res.json(body)
+
+      if (typeof cb === 'function') return cb()
     }
 
     return next()
